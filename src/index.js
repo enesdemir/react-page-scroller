@@ -188,24 +188,11 @@ export default class ReactPageScroller extends React.Component {
       }
 
     [wheelScroll] = (event) => {
-        if (event.deltaY < 0) {
-            this[scrollWindowUp]();
-        } else {
-            this[scrollWindowDown]();
-        }
 
     };
 
     [touchMove] = (event) => {
-        if (!_.isNull(this[previousTouchMove])) {
-            if (event.touches[0].clientY > this[previousTouchMove]) {
-                this[scrollWindowUp]();
-            } else {
-                this[scrollWindowDown]();
-            }
-        } else {
-            this[previousTouchMove] = event.touches[0].clientY;
-        }
+
     };
 
     [keyPress] = (event) => {
